@@ -4,21 +4,13 @@
 using namespace std;
 
 void PrintIntro();
+void PlayGame();
 string GetGuess();
 
 int main()
 {
-	constexpr int NUMBER_OF_TURNS = 5;
-
 	PrintIntro();
-
-	for (int i = 0; i < NUMBER_OF_TURNS; i++)
-	{
-		// Repeat the guess back to the player.
-		cout << "Your guess was: " << GetGuess() << endl;
-		cout << endl;
-	}
-
+	PlayGame();
 	return 0;
 }
 
@@ -30,6 +22,17 @@ void PrintIntro()
 	cout << "Can you guess the " << WORLD_LENGTH << " letter isogram I'm thinking of?" << endl;
 	cout << endl;
 	return;
+}
+
+void PlayGame()
+{
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 0; i < NUMBER_OF_TURNS; i++)
+	{
+		// Repeat the guess back to the player.
+		cout << "Your guess was: " << GetGuess() << endl;
+		cout << endl;
+	}
 }
 
 string GetGuess()
