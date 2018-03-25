@@ -6,11 +6,13 @@ using namespace std;
 void PrintIntro();
 void PlayGame();
 string GetGuess();
+bool AskToPlayAgain();
 
 int main()
 {
 	PrintIntro();
 	PlayGame();
+	AskToPlayAgain();
 	return 0;
 }
 
@@ -42,4 +44,12 @@ string GetGuess()
 	cout << "Please, enter your guess: ";
 	getline(cin, Guess);
 	return Guess;
+}
+
+bool AskToPlayAgain()
+{
+	cout << "Do you wanna play again? ";
+	string Response = "";
+	getline(cin, Response);
+	return ('Y' == Response[0]) || ('y' == Response[0]);
 }
