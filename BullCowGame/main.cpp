@@ -8,11 +8,16 @@ string GetGuess();
 
 int main()
 {
+	constexpr int NUMBER_OF_TURNS = 5;
+
 	PrintIntro();
-	
-	// Repeat the guess back to the player.
-	cout << "Your guess was: " << GetGuess() << endl;
-	cout << endl;
+
+	for (int i = 0; i < NUMBER_OF_TURNS; i++)
+	{
+		// Repeat the guess back to the player.
+		cout << "Your guess was: " << GetGuess() << endl;
+		cout << endl;
+	}
 
 	return 0;
 }
