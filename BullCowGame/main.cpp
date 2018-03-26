@@ -10,9 +10,13 @@ bool AskToPlayAgain();
 
 int main()
 {
-	PrintIntro();
-	PlayGame();
-	AskToPlayAgain();
+	do
+	{
+		PrintIntro();
+		PlayGame();
+	}
+	while (AskToPlayAgain());
+
 	return 0;
 }
 
@@ -48,7 +52,7 @@ string GetGuess()
 
 bool AskToPlayAgain()
 {
-	cout << "Do you wanna play again? ";
+	cout << "Do you wanna play again (y/n)? ";
 	string Response = "";
 	getline(cin, Response);
 	return ('Y' == Response[0]) || ('y' == Response[0]);
