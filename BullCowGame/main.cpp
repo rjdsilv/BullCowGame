@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.h"
 
 void PrintIntro();
 void PlayGame();
@@ -30,6 +31,8 @@ void PrintIntro()
 
 void PlayGame()
 {
+	FBullCowGame BCGame;
+
 	constexpr int NUMBER_OF_TURNS = 5;
 	for (int i = 0; i < NUMBER_OF_TURNS; i++)
 	{
