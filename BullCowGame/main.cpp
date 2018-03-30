@@ -33,6 +33,7 @@ void PrintIntro()
 
 void PlayGame()
 {
+	BCGame.Reset();
 	for (int i = 0; i < BCGame.GetMaxTries(); i++)
 	{
 		// Repeat the guess back to the player.
