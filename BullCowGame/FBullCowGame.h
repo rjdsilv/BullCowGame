@@ -4,7 +4,10 @@
 using FString = std::string;
 using int32 = int;
 
-struct BullCowCount
+///
+/// All the fields are being initialized with zero.
+///
+struct FBullCowCount
 {
 	int32 Bulls = 0;
 	int32 Cows = 0;
@@ -22,7 +25,7 @@ public:
 
 	void Reset();
 	bool CheckGuessValidity(FString);
-	BullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitGuess(FString);
 
 private:
 	int32 MyCurrentTry;

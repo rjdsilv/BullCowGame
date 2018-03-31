@@ -29,9 +29,29 @@ bool FBullCowGame::CheckGuessValidity(FString)
 	return false;
 }
 
-BullCowCount FBullCowGame::SubmitGuess(FString)
+FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 {
 	MyCurrentTry++;
-	BullCowCount BullCowCount;
+	FBullCowCount BullCowCount;
+
+	int32 HiddenWordLen = MyHiddenWord.length();
+	for (int32 i = 0; i < HiddenWordLen; i++)
+	{
+		for (int32 j = 0; j < HiddenWordLen; j++)
+		{
+			if (Guess[j] == MyHiddenWord[i])
+			{
+				if (i == j)
+				{
+					BullCowCount.Bulls++;
+				}
+				else
+				{
+					BullCowCount.Cows++;
+				}
+			}
+		}
+	}
+
 	return BullCowCount;
 }

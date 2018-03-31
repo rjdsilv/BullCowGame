@@ -39,9 +39,9 @@ void PlayGame()
 	BCGame.Reset();
 	for (int32 i = 0; i < BCGame.GetMaxTries(); i++)
 	{
-		// Repeat the guess back to the player.
-		std::cout << "Your guess was: " << GetGuess() << std::endl;
-		std::cout << std::endl;
+		FText Guess = GetGuess();
+		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+		std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << std::endl;
 	}
 }
 
