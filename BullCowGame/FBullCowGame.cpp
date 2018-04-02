@@ -31,7 +31,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 		return EGuessStatus::Wrong_Length;
 	}
 
-	return EGuessStatus::OK;
+	return EGuessStatus::Ok;
 }
 
 void FBullCowGame::Reset()
