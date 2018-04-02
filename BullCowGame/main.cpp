@@ -43,7 +43,7 @@ void PlayGame()
 
 		if (Status == EGuessStatus::Ok)
 		{
-			FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+			FBullCowCount BullCowCount = BCGame.SubmitValidGuess(Guess);
 			std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << "\n\n";
 		}
 	}
@@ -73,7 +73,8 @@ FText GetValidGuess()
 			std::cout << "Please enter a word with lowercase letters only.\n";
 			break;
 		default:
-			return Guess;
+			// Assuming the guess is valid.
+			break;
 		}
 
 		std::cout << std::endl;

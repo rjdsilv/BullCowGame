@@ -46,15 +46,15 @@ void FBullCowGame::Reset()
 	return;
 }
 
-FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
+FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 {
 	MyCurrentTry++;
 	FBullCowCount BullCowCount;
+	int32 WordLen = MyHiddenWord.length(); // Assuming same length as guess.
 
-	int32 HiddenWordLen = MyHiddenWord.length();
-	for (int32 HWChar = 0; HWChar < HiddenWordLen; HWChar++)
+	for (int32 HWChar = 0; HWChar < WordLen; HWChar++)
 	{
-		for (int32 GChar = 0; GChar < HiddenWordLen; GChar++)
+		for (int32 GChar = 0; GChar < WordLen; GChar++)
 		{
 			if (Guess[GChar] == MyHiddenWord[HWChar])
 			{
