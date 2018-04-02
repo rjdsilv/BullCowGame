@@ -39,8 +39,13 @@ void PlayGame()
 	for (int32 i = 0; i < BCGame.GetMaxTries(); i++)
 	{
 		FText Guess = GetGuess();
-		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
-		std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << std::endl;
+		EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
+
+		if (Status == EGuessStatus::OK)
+		{
+			FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+			std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << std::endl;
+		}
 	}
 }
 
