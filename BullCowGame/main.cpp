@@ -7,6 +7,7 @@ using int32 = int;
 
 void PrintIntro();
 void PlayGame();
+void PrintGameSummary();
 FText GetValidGuess();
 bool AskToPlayAgain();
 
@@ -49,6 +50,21 @@ void PlayGame()
 			std::cout << "Bulls = " << BullCowCount.Bulls << ". Cows = " << BullCowCount.Cows << "\n\n";
 		}
 	}
+
+	PrintGameSummary();
+	return;
+}
+
+void PrintGameSummary()
+{
+	if (BCGame.IsGameWon())
+	{
+		std::cout << "WELL DONE -  YOU WIN\n";
+	}
+	else
+	{
+		std::cout << "Better luck next time!\n";
+	}
 }
 
 FText GetValidGuess()
@@ -87,7 +103,7 @@ FText GetValidGuess()
 
 bool AskToPlayAgain()
 {
-	std::cout << "Do you wanna play again (y/n)? ";
+	std::cout << "Do you wanna play again with the same given word (y/n)? ";
 	FText Response = "";
 	std::getline(std::cin, Response);
 	return ('Y' == Response[0]) || ('y' == Response[0]);
