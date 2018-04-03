@@ -1,4 +1,7 @@
+#include <map>
 #include "FBullCowGame.h"
+
+#define TMap std::map
 
 using int32 = int;
 
@@ -12,7 +15,7 @@ bool FBullCowGame::IsGameWon() const { return bIsGameWon; }
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
 	// If the guess is not an isogram.
-	if (false)
+	if (!IsIsogram(Guess))
 	{
 		return EGuessStatus::Not_Isogram;
 	}
@@ -28,6 +31,11 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}
 
 	return EGuessStatus::Ok;
+}
+
+bool FBullCowGame::IsIsogram(FString Word) const
+{
+	return true;
 }
 
 void FBullCowGame::Reset()
